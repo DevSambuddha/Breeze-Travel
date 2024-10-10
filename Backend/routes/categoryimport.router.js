@@ -1,7 +1,6 @@
 const express = require("express");
 
 const { Category } = require("../models/category.model");
-const {} = require("../data/hotels");
 const { categories } = require("../data/categories");
 
 const useCategory = express.Router();
