@@ -3,9 +3,9 @@ const express = require("express");
 const { Category } = require("../models/category.model");
 const { categories } = require("../data/categories");
 
-const useCategory = express.Router();
+const useCategoryImport = express.Router();
 
-useCategory.post("/", async (req, res) => {
+useCategoryImport.post("/", async (req, res) => {
   try {
     const categoriesinDB = await Category.insertMany(categories.data);
     res.json(categoriesinDB);
@@ -15,4 +15,4 @@ useCategory.post("/", async (req, res) => {
   }
 });
 
-module.exports = { useCategory };
+module.exports = { useCategoryImport };
