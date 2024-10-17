@@ -9,6 +9,7 @@ const { useHotel } = require("./routes/hotel.route");
 const { useCategory } = require("./routes/category.router");
 const { userSingleHotel } = require("./routes/singlehotel.router");
 const { useAuth } = require("./routes/auth.router");
+const { useWishlist } = require("./routes/wishlist.router");
 //Importing Environment file
 require("dotenv").config();
 
@@ -25,6 +26,7 @@ app.use("/api/v1/categories", useCategoryImport);
 app.use("/ap1/v1/category", useCategory);
 app.use("/api/v1/hotels", userSingleHotel);
 app.use("/api/v1/auth", useAuth);
+app.use("/api/v1/wishlist", useWishlist);
 
 mongoose.connection.once("open", () => {
   console.log("Connected to Database");
