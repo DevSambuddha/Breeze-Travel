@@ -1,8 +1,9 @@
 const express = require("express");
 const { Wishlist } = require("../models/wishlist.model");
 const useWishlist = express.Router();
+const { verifyUser } = require("../middleware/verifyuser");
 
-useWishlist.post("/", async (req, res) => {
+useWishlist.post("/", verifyUser, async (req, res) => {
   const newWishlist = new Wishlist(req.body); // Creating new wishlist from Wishlist model and we're using req.body because it has the body
   try {
     const savedWishlist = await newWishlist.save();
@@ -13,7 +14,7 @@ useWishlist.post("/", async (req, res) => {
   }
 });
 
-useWishlist.delete("/:id", async (req, res) => {
+useWishlist.delete("/:id", verifyUser, async (req, res) => {
   // It is still not usr specific ...need towork on it
   //:id is very important for passing through params
   try {
@@ -24,7 +25,7 @@ useWishlist.delete("/:id", async (req, res) => {
   }
 });
 
-useWishlist.get("/", async (req, res) => {
+useWishlist.get("/", verifyUser, async (req, res) => {
   try {
     const wishlist = await Wishlist.find({});
     wishlist ? res.json(wishlist) : res.json({ message: "No items found" });
