@@ -23,7 +23,7 @@ const port = process.env.PORT || 3000;
 app.use("/api/v1/hotels", useHotel);
 app.use("/api/v1/hoteldata", useImport);
 app.use("/api/v1/categories", useCategoryImport);
-app.use("/ap1/v1/category", useCategory);
+app.use("/api/v1/category", useCategory);
 app.use("/api/v1/hotels", userSingleHotel);
 app.use("/api/v1/auth", useAuth);
 app.use("/api/v1/wishlist", useWishlist);
