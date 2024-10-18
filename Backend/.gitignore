@@ -1,6 +1,6 @@
 node_modules
 .env
 data
-package-lock
+package-lock.json
 
 # error out and 404 do on your own challenge
