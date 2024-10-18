@@ -1,11 +1,11 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "description": "",
   "main": "database.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
+    "build": "webpack --mode production",
     "dev": "nodemon server"
   },
   "keywords": [],
@@ -19,5 +19,7 @@
     "mongoose": "^8.7.0",
     "nodemon": "^3.1.7",
     "uuid": "^10.0.0"
-  }
+  },
+  "devDependencies": {},
+  "description": ""
 }
