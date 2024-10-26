@@ -1,24 +1,24 @@
 import "./HotelCard.css";
-const HotelCard = () => {
+const HotelCard = ({ hotel }) => {
+  const { _id, hotelname, image, address, state, rating, price } = hotel;
+
   return (
     <div className="relative hotelcard-container shadow cursor-pointer">
       <div>
-        <img
-          className="img"
-          src="https://a0.muscache.com/im/pictures/miso/Hosting-26117817/original/9da40e3c-5846-4359-bb41-05c27b09a8f5.jpeg?im_w=720"
-          alt="hotelCard"
-        />
+        <img className="img" src={image} alt={hotelname} />
         <div className="hotelcard-details">
           <div className="info d-flex align-center">
-            <span className="location">Bir, Himachal Pradesh</span>
+            <span className="location">
+              {address}, {state}
+            </span>
             <span className="rating d-flex align-center ">
               <span className="material-symbols-outlined">star_half</span>
-              <span>4.3</span>
+              <span>{rating}</span>
             </span>
           </div>
-          <p className="hotel-name">Sukoon Bag</p>
+          <p className="hotel-name">{hotelname}</p>
           <p className="price-details">
-            <span className="price">Rs. 3500</span>
+            <span className="price">Rs. {price}</span>
             <span>per night</span>
           </p>
         </div>

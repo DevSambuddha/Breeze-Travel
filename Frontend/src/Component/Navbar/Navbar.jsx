@@ -4,7 +4,7 @@ const Navbar = () => {
     <header className="heading-main d-flex align-center">
       <h1 className="heading-1">
         <a className="link" href="/">
-          BreezeT
+          BreezeTravel
         </a>
       </h1>
       <div className="form-container d-flex align-center cursor-pointer shadow">

@@ -5,13 +5,14 @@ import "./Home.css";
 import axios from "axios";
 
 export const Home = () => {
+  const [hotels, setHotels] = useState([]);
   useEffect(() => {
     (async () => {
       try {
-        const data = await axios.get(
+        const { data } = await axios.get(
           "https://monkfish-app-ivioy.ondigitalocean.app/api/v1/hotels"
         );
-        console.log(data);
+        setHotels(data);
       } catch (error) {
         console.log(error);
       }
@@ -21,8 +22,9 @@ export const Home = () => {
   return (
     <>
       <Navbar />
-      <main className="main">
-        <HotelCard />
+      <main className="main d-flex align-center wrap gap-larger">
+        {hotels &&
+          hotels.map((hotel) => <HotelCard key={hotel._id} hotel={hotel} />)}
       </main>
     </>
   );
