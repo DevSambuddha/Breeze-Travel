@@ -1,5 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const cors = require("cors");
 //Importing DB
 const { connectDB } = require("./config/dbconfig");
 //Importing Routes
@@ -14,7 +15,7 @@ const { useWishlist } = require("./routes/wishlist.router");
 require("dotenv").config();
 
 const app = express();
-
+app.use(cors());
 app.use(express.json());
 connectDB();
 
