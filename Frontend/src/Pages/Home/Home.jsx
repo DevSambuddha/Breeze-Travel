@@ -1,21 +1,26 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import InfiniteScroll from "react-infinite-scroll-component";
+
 import Navbar from "../../Component/Navbar/Navbar";
 import HotelCard from "../../Component/HotelCard/HotelCard";
+import Categories from "../../Component/Categories/Categories";
+import { useCategory } from "../../context/category-context";
+
 import "./Home.css";
 
 export const Home = () => {
   const [hasMore, setHasMore] = useState(true);
   const [currentIndex, setCurrentIndex] = useState(16);
   const [testData, setTestData] = useState([]);
+  const { hotelCategory } = useCategory();
 
   const [hotels, setHotels] = useState([]);
   useEffect(() => {
     (async () => {
       try {
         const { data } = await axios.get(
-          "https://monkfish-app-ivioy.ondigitalocean.app/api/v1/hotels"
+          `https://monkfish-app-ivioy.ondigitalocean.app/api/v1/hotels?category=${hotelCategory}`
         );
         setTestData(data);
         setHotels(data ? data.slice(0, 16) : []);
@@ -23,7 +28,7 @@ export const Home = () => {
         console.log(error);
       }
     })();
-  }, []);
+  }, [hotelCategory]);
 
   const fetchMoreData = () => {
     if (hotels.length >= testData.length) {
@@ -45,6 +50,7 @@ export const Home = () => {
   return (
     <>
       <Navbar />
+      <Categories />
       {hotels && hotels.length > 0 ? (
         <InfiniteScroll
           dataLength={hotels.length}
