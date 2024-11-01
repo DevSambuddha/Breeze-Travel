@@ -2,12 +2,10 @@
 import { Route, Routes } from "react-router-dom";
 
 import Home from "./Pages/Home/Home";
-import SingleHotel from "./Pages/SingleHotel/SinglHotel";
+import SingleHotel from "./Pages/SingleHotel/SingleHotel";
 import "./App.css";
 
 function App() {
-  //const [count, setCount] = useState(0);
-
   return (
     <Routes>
       <Route path="/" element={<Home />} />
