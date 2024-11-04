@@ -1,9 +1,12 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+
+//importing components from Component folder
 import Navbar from "../../Component/Navbar/Navbar";
 import HotelImages from "../../Component/HotelImages/HotelImages";
 import HotelDetails from "../../Component/HotelDetails/HotelDetails";
+import FinalPrice from "../../Component/FinalPrice/FinalPrice";
 
 import "./SingleHotel.css";
 
@@ -36,8 +39,9 @@ const SingleHotel = () => {
           {name},{state}
         </p>
         <HotelImages singleHotel={singleHotel} />
-        <div>
+        <div className="d-flex">
           <HotelDetails singleHotel={singleHotel} />
+          <FinalPrice singleHotel={singleHotel} />
         </div>
       </main>
     </>
