@@ -1,5 +1,7 @@
 import "./Navbar.css";
 const Navbar = () => {
+  const handleSearchOptionClick = () => {};
+
   return (
     <header className="heading-main d-flex align-center">
       <h1 className="heading-1">
@@ -7,7 +9,10 @@ const Navbar = () => {
           BreezeTravel
         </a>
       </h1>
-      <div className="form-container d-flex align-center cursor-pointer shadow">
+      <div
+        className="form-container d-flex align-center cursor-pointer shadow"
+        onClick={handleSearchOptionClick}
+      >
         <span className="form-option">Any Where</span>
         <span className="border-right-1px"></span>
         <span className="form-option">Any Week</span>
