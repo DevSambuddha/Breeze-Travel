@@ -4,7 +4,7 @@ import "./SearchStayWithDate.css";
 const SearchStayWithDate = () => {
   return (
     <div className="destination-container">
-      <div className="destination-options d-flex align-center">
+      <div className="destination-options d-flex align-center absolute">
         <div className="location-container">
           <label className="label">Where</label>
           <input
@@ -14,11 +14,11 @@ const SearchStayWithDate = () => {
         </div>
         <div className="location-container">
           <label className="label">Check in</label>
-          <DateSelector />
+          <DateSelector checkInType="in" />
         </div>
         <div className="location-container">
           <label className="label">Check out</label>
-          <DateSelector />
+          <DateSelector checkOutType="out" />
         </div>
         <div className="location-container">
           <label className="label">Number of Guests</label>
@@ -26,7 +26,7 @@ const SearchStayWithDate = () => {
         </div>
         <div className="search-container d-flex align-center cursor">
           <span className="material-symbols-outlined">search</span>
-          <span></span>
+          <span>Search</span>
         </div>
       </div>
     </div>

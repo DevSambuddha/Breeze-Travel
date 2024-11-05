@@ -1,6 +1,13 @@
 import "./Navbar.css";
+import { useDate } from "../../context/date-context";
 const Navbar = () => {
-  const handleSearchOptionClick = () => {};
+  const { dateDispatch } = useDate();
+
+  const handleSearchOptionClick = () => {
+    dateDispatch({
+      type: "OPEN_SEARCH_MODAL",
+    });
+  };
 
   return (
     <header className="heading-main d-flex align-center">
