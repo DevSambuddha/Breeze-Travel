@@ -6,6 +6,8 @@ import Navbar from "../../Component/Navbar/Navbar";
 import HotelCard from "../../Component/HotelCard/HotelCard";
 import Categories from "../../Component/Categories/Categories";
 import { useCategory } from "../../context/category-context";
+import SearchStayWithDate from "../../Component/SearchStayWithDate/SearchStayWithDate";
+import { useDate } from "../../context/date-context";
 
 import "./Home.css";
 
@@ -14,6 +16,7 @@ export const Home = () => {
   const [currentIndex, setCurrentIndex] = useState(16);
   const [testData, setTestData] = useState([]);
   const { hotelCategory } = useCategory();
+  const { isSearchModalOpen } = useDate();
 
   const [hotels, setHotels] = useState([]);
   useEffect(() => {
@@ -48,7 +51,7 @@ export const Home = () => {
   };
 
   return (
-    <>
+    <div>
       <Navbar />
       <Categories />
       {hotels && hotels.length > 0 ? (
@@ -71,7 +74,8 @@ export const Home = () => {
       ) : (
         <></>
       )}
-    </>
+      {isSearchModalOpen && <SearchStayWithDate />}
+    </div>
   );
 };
 
