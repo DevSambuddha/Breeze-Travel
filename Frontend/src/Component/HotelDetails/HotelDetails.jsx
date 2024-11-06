@@ -13,7 +13,7 @@ const HotelDetails = ({ singleHotel }) => {
   return (
     <div className="hotel-details-container">
       <div className="host-details">
-        <p className="host-name p">
+        <p className="host-name para">
           Hosted by {hostName}, Joined on {hostJoinedOn}
         </p>
         <div className="span hotel-room-details">
@@ -23,7 +23,7 @@ const HotelDetails = ({ singleHotel }) => {
       </div>
       <div className="key-features host-details">
         <div className="gutter-bottom-small">
-          <p className="p d-flex align-center gap">
+          <p className="para d-flex align-center gap">
             <span className="material-symbols-outlined">apps</span>Dedicated
             Workspace
           </p>
@@ -32,7 +32,7 @@ const HotelDetails = ({ singleHotel }) => {
           </span>
         </div>
         <div className="gutter-bottom-small">
-          <p className="p d-flex align-center gap">
+          <p className="para d-flex align-center gap">
             <span className="material-symbols-outlined">apps</span>Great
             Location
           </p>
@@ -40,13 +40,13 @@ const HotelDetails = ({ singleHotel }) => {
             80% of recent guests gave the location a 5-star rating
           </span>
         </div>
-        <p className="p d-flex align-center gap">
+        <p className="para d-flex align-center gap">
           <span className="material-symbols-outlined">apps</span>Free
           cancellation before 7 days of booking
         </p>
       </div>
       <div className="amenities-container">
-        <p className="p amenities">What this place offers</p>
+        <p className="para amenities">What this place offers</p>
         <div className="d-flex gap-xxl">
           <div className="d-flex direction-column">
             <span className="span d-flex align-center gap">

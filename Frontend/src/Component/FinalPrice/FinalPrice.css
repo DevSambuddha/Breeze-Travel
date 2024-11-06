@@ -37,3 +37,9 @@
 .justify-space-between {
   justify-content: space-between;
 }
+.guest-count-input {
+  border: none;
+}
+.guest-count-input:focus {
+  outline: none;
+}
