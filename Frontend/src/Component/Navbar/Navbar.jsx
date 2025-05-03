@@ -1,7 +1,6 @@
 import "./Navbar.css";
 import { useDate } from "../../context/date-context";
 import { useAuth } from "../../context/auth-context";
-import { type } from "express/lib/response";
 
 const Navbar = () => {
   const { destination, dateDispatch, checkInDate, checkOutDate, guests } =
