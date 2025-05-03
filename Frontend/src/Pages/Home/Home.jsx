@@ -9,7 +9,6 @@ import { useCategory } from "../../context/category-context";
 import SearchStayWithDate from "../../Component/SearchStayWithDate/SearchStayWithDate";
 import { useDate } from "../../context/date-context";
 import useAuthModal from "../../Component/AuthModal/AuthModal";
-import { useAuth } from "../../context/auth-context";
 
 import "./Home.css";
 import AuthModal from "../../Component/AuthModal/AuthModal";
@@ -23,8 +22,6 @@ export const Home = () => {
   const { isSearchModalOpen } = useDate();
 
   const [hotels, setHotels] = useState([]);
-
-  const { isAuthModalOpen } = useAuth();
 
   useEffect(() => {
     (async () => {
@@ -82,7 +79,6 @@ export const Home = () => {
         <></>
       )}
       {isSearchModalOpen && <SearchStayWithDate />}
-      {/* {isAuthModalOpen && <AuthModal />} */}
     </div>
   );
 };
