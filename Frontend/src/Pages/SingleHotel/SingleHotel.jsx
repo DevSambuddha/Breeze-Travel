@@ -9,6 +9,7 @@ import HotelDetails from "../../Component/HotelDetails/HotelDetails";
 import FinalPrice from "../../Component/FinalPrice/FinalPrice";
 
 import "./SingleHotel.css";
+import { backendUrl } from "../../Utis";
 
 const SingleHotel = () => {
   const { _id } = useParams();
@@ -17,9 +18,7 @@ const SingleHotel = () => {
   useEffect(() => {
     (async () => {
       try {
-        const { data } = await axios.get(
-          `https://breeze-travel-3u24.onrender.com/api/hotels/${_id}`
-        );
+        const { data } = await axios.get(`${backendUrl}/api/v1/hotels/${_id}`);
         console.log(data);
 
         setSingleHotel(data);

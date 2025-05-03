@@ -5,6 +5,7 @@ import "./SearchStayWithDate.css";
 import { useDate } from "../../context/date-context";
 import { useCategory } from "../../context/category-context";
 import { useNavigate } from "react-router-dom";
+import { backendUrl } from "../../Utis";
 
 const SearchStayWithDate = () => {
   const { destination, guests, dateDispatch, isSearchModalOpen } = useDate();
@@ -16,7 +17,7 @@ const SearchStayWithDate = () => {
     (async () => {
       try {
         const { data } = await axios.get(
-          `https://breeze-travel-3u24.onrender.com/api/v1/hotels?category=${hotelCategory}`
+          `${backendUrl}/api/v1/hotels?category=${hotelCategory}`
         );
         setHotels(data);
       } catch (error) {

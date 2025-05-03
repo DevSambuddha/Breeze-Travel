@@ -19,9 +19,7 @@ const Categories = () => {
   useEffect(() => {
     (async () => {
       try {
-        const { data } = await axios.get(
-          "https://breeze-travel-3u24.onrender.com/api/v1/category"
-        );
+        const { data } = await axios.get(`${backendUrl}/api/v1/category`);
         const categoriesToShow = data.slice(
           numberOfCategoriesToShow + 10 > data.length - 10
             ? data.length - 10

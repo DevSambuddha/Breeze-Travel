@@ -13,6 +13,7 @@ import { useAuth } from "../../context/auth-context";
 
 import "./Home.css";
 import AuthModal from "../../Component/AuthModal/AuthModal";
+import { backendUrl } from "../../Utis";
 
 export const Home = () => {
   const [hasMore, setHasMore] = useState(true);
@@ -29,7 +30,7 @@ export const Home = () => {
     (async () => {
       try {
         const { data } = await axios.get(
-          `https://breeze-travel-3u24.onrender.com/api/v1/hotels?category=${hotelCategory}`
+          `${backendUrl}/api/v1/hotels?category=${hotelCategory}`
         );
         setTestData(data);
         setHotels(data ? data.slice(0, 16) : []);
