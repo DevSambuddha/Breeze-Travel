@@ -14,7 +14,7 @@ const SearchResults = () => {
     (async () => {
       try {
         const { data } = await axios.get(
-          `https://monkfish-app-ivioy.ondigitalocean.app/api/v1/hotels?category=${hotelCategory}`
+          `https://breeze-travel-3u24.onrender.com/api/v1/hotels?category=${hotelCategory}`
         );
         setHotels(data);
       } catch (error) {

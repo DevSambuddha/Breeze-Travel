@@ -20,7 +20,7 @@ const Categories = () => {
     (async () => {
       try {
         const { data } = await axios.get(
-          "https://monkfish-app-ivioy.ondigitalocean.app/api/v1/category"
+          "https://breeze-travel-3u24.onrender.com/api/v1/category"
         );
         const categoriesToShow = data.slice(
           numberOfCategoriesToShow + 10 > data.length - 10

@@ -1,15 +1,25 @@
 import "./Navbar.css";
 import { useDate } from "../../context/date-context";
+import { useAuth } from "../../context/auth-context";
+import { type } from "express/lib/response";
 
 const Navbar = () => {
   const { destination, dateDispatch, checkInDate, checkOutDate, guests } =
     useDate();
 
-  const handleSearchOptionClick = () => {
-    dateDispatch({
-      type: "OPEN_SEARCH_MODAL",
-    });
-  };
+  // const { authDispatch } = useAuth();
+
+  // const handleSearchOptionClick = () => {
+  //   dateDispatch({
+  //     type: "OPEN_SEARCH_MODAL",
+  //   });
+  // };
+
+  // const handleAuthClick = () => {
+  //   authDispatch({
+  //     type: "SHOW_AUTH_MODAL",
+  //   });
+  // };
 
   return (
     <header className="heading-main d-flex align-center">

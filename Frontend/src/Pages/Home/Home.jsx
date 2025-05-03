@@ -8,8 +8,11 @@ import Categories from "../../Component/Categories/Categories";
 import { useCategory } from "../../context/category-context";
 import SearchStayWithDate from "../../Component/SearchStayWithDate/SearchStayWithDate";
 import { useDate } from "../../context/date-context";
+import useAuthModal from "../../Component/AuthModal/AuthModal";
+import { useAuth } from "../../context/auth-context";
 
 import "./Home.css";
+import AuthModal from "../../Component/AuthModal/AuthModal";
 
 export const Home = () => {
   const [hasMore, setHasMore] = useState(true);
@@ -19,11 +22,14 @@ export const Home = () => {
   const { isSearchModalOpen } = useDate();
 
   const [hotels, setHotels] = useState([]);
+
+  const { isAuthModalOpen } = useAuth();
+
   useEffect(() => {
     (async () => {
       try {
         const { data } = await axios.get(
-          `https://monkfish-app-ivioy.ondigitalocean.app/api/v1/hotels?category=${hotelCategory}`
+          `https://breeze-travel-3u24.onrender.com/api/v1/hotels?category=${hotelCategory}`
         );
         setTestData(data);
         setHotels(data ? data.slice(0, 16) : []);
@@ -75,6 +81,7 @@ export const Home = () => {
         <></>
       )}
       {isSearchModalOpen && <SearchStayWithDate />}
+      {/* {isAuthModalOpen && <AuthModal />} */}
     </div>
   );
 };

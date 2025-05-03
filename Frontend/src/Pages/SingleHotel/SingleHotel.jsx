@@ -18,7 +18,7 @@ const SingleHotel = () => {
     (async () => {
       try {
         const { data } = await axios.get(
-          `https://monkfish-app-ivioy.ondigitalocean.app/api/v1/hotels/${_id}`
+          `https://breeze-travel-3u24.onrender.com/api/hotels/${_id}`
         );
         console.log(data);
 
